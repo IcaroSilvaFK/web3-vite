@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "phosphor-react": "^1.4.1",
+    "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
     "styled-components": "^5.3.6",
-    "web3": "^1.8.1"
+    "web3": "^1.8.1",
+    "zustand": "^4.2.0"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.1.3",

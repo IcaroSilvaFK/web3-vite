@@ -1,7 +1,9 @@
-import { House, Path, Wallet } from 'phosphor-react'
-import { NavLink } from 'react-router-dom'
+import { House, Path, Wallet, SignIn } from 'phosphor-react'
 
-import { ButtonLink, Container, Navigation, SubContainer } from './styles'
+import { NavLink } from 'react-router-dom'
+import { Button } from '../../../components/Button'
+
+import { Container, Navigation, SubContainer } from './styles'
 
 export function Header() {
   return (
@@ -25,14 +27,17 @@ export function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/farm">
-                <Wallet size={20} />
-                Farm
+              <NavLink to="/trade">
+                <SignIn size={20} />
+                SignIn
               </NavLink>
             </li>
           </ul>
         </Navigation>
-        <ButtonLink to="/signIn">SignIn</ButtonLink>
+        <Button>
+          <Wallet size={22} />
+          Connect your wallet
+        </Button>
       </SubContainer>
     </Container>
   )
