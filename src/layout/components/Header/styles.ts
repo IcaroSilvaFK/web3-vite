@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.header`
   width: 100%;
@@ -25,23 +26,22 @@ export const SubContainer = styled.div`
       color: ${({ theme }) => theme.colors.green[500]};
     }
   }
+`
+export const ButtonLink = styled(Link)`
+  padding: 12px 22px;
 
-  button {
-    padding: 12px 22px;
+  border-radius: 4px;
 
-    border-radius: 4px;
+  font-weight: bold;
 
-    font-weight: bold;
+  background: ${({ theme }) => theme.colors.green[500]};
+  color: ${({ theme }) => theme.colors.gray[100]};
 
-    background: ${({ theme }) => theme.colors.green[500]};
-    color: ${({ theme }) => theme.colors.gray[100]};
+  transition: all linear 0.3s;
 
-    transition: all linear 0.3s;
-
-    &:hover {
-      background: ${({ theme }) => theme.colors.green[700]};
-      color: ${({ theme }) => theme.colors.gray[300]};
-    }
+  &:hover {
+    background: ${({ theme }) => theme.colors.green[700]};
+    color: ${({ theme }) => theme.colors.gray[300]};
   }
 `
 
