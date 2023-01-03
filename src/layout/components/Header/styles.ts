@@ -1,3 +1,4 @@
+import { transparentize } from 'polished'
 import styled from 'styled-components'
 
 export const Container = styled.header`
@@ -50,5 +51,25 @@ export const Navigation = styled.nav`
         }
       }
     }
+  }
+`
+
+export const Tag = styled.div`
+  background: ${({ theme }) => transparentize(0.9, theme.colors.gray[500])};
+  color: ${({ theme }) => theme.colors.yellow[500]};
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  padding: 4px 12px;
+
+  button {
+    margin-left: 12px;
+    background: transparent;
+    color: ${({ theme }) => theme.colors.red[500]};
+
+    display: flex;
+    align-items: center;
   }
 `
