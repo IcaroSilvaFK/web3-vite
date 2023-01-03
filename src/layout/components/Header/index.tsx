@@ -15,9 +15,14 @@ import { useWallets } from '../../../store/wallet'
 import { Container, Navigation, SubContainer, Tag } from './styles'
 
 export function Header() {
-  const { setWallets, wallets, setWalletValue, value } = useWallets(
-    (state) => state,
-  )
+  const {
+    setWallets,
+    wallets,
+    setWalletValue,
+    value,
+    destroyWalletValue,
+    destroyWallets,
+  } = useWallets((state) => state)
   const web3 = new WalletBalance()
 
   async function handleSetWallets() {
@@ -28,7 +33,10 @@ export function Header() {
     setWalletValue(balance)
   }
 
-  console.log(wallets)
+  function handleRemoveWalletAndBalance() {
+    destroyWallets()
+    destroyWalletValue()
+  }
 
   return (
     <Container>
@@ -62,7 +70,10 @@ export function Header() {
           <Tag onClick={handleSetWallets}>
             <CurrencyGbp size={22} />
             {value}
-            <button>
+            <button
+              onClick={handleRemoveWalletAndBalance}
+              title="Sair da carteira"
+            >
               <SignOut size={22} />
             </button>
           </Tag>

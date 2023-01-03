@@ -26,7 +26,7 @@ export class WalletBalance {
     return wallet
   }
 
-  async getWalletsBalance(address: string) {
+  async getWalletsBalance(address: string): Promise<string> {
     const balance = await this.web3.eth.getBalance(address)
 
     const convertBalance = this.web3.utils.fromWei(balance)
