@@ -1,4 +1,5 @@
 import { Info } from 'phosphor-react'
+import { Footer } from '../../components/Footer'
 
 import { MetamaskLogo } from '../../components/MetaLogo'
 import metaMask from '../../utils/metamask/fox.json'
@@ -41,6 +42,7 @@ export function Home() {
           Consult Pool details before Depositing.
         </p>
       </ContainerSecondSection>
+      <Footer />
     </Container>
   )
 }

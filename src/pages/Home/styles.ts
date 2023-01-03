@@ -1,19 +1,23 @@
 import styled from 'styled-components'
 
-export const Container = styled.main``
+export const Container = styled.main`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`
 
 export const ContainerFirstSection = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  flex: 1;
 
   h1 {
     font-family: ${({ theme }) => theme.fonts.robotoMono};
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.yellow[500]};
   }
-
   img {
     max-width: 500px;
     margin-right: -80px;

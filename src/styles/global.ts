@@ -10,7 +10,7 @@ export const GlobalCSS = createGlobalStyle`
     outline: 0;
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.green[500]};
   }
-  html,border-style,#root{
+  html,body,#root{
     width: 100%;
     height: 100%;
     background:${({ theme }) => theme.colors.gray[900]};

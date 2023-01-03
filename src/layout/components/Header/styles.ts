@@ -62,7 +62,7 @@ export const Tag = styled.div`
   display: flex;
   align-items: center;
   font-style: italic;
-  padding: 4px 12px;
+  padding: 8px 12px;
 
   button {
     margin-left: 12px;
