@@ -1,8 +1,10 @@
 import { Info } from 'phosphor-react'
+import { useEffect } from 'react'
 import { Footer } from '../../components/Footer'
 
 import { MetamaskLogo } from '../../components/MetaLogo'
 import metaMask from '../../utils/metamask/fox.json'
+import { toastInfo } from '../../utils/toasts/info'
 
 import {
   Container,
@@ -11,6 +13,10 @@ import {
 } from './styles'
 
 export function Home() {
+  useEffect(() => {
+    toastInfo('we only use the metamask as a digital wallet')
+  }, [])
+
   return (
     <Container>
       <ContainerFirstSection>
