@@ -6,6 +6,7 @@ import {
   CurrencyGbp,
   SignOut,
 } from 'phosphor-react'
+import { MouseEvent } from 'react'
 
 import { NavLink } from 'react-router-dom'
 import { Button } from '../../../components/Button'
@@ -17,7 +18,6 @@ import { Container, Navigation, SubContainer, Tag } from './styles'
 export function Header() {
   const {
     setWallets,
-    wallets,
     setWalletValue,
     value,
     destroyWalletValue,
@@ -31,18 +31,22 @@ export function Header() {
 
     setWallets(wallets)
     setWalletValue(balance)
+    console.log('handleSetWallets')
   }
 
-  function handleRemoveWalletAndBalance() {
+  function handleRemoveWalletAndBalance(e: MouseEvent) {
+    e.stopPropagation()
     destroyWallets()
     destroyWalletValue()
+    console.log('handleRemoveWalletAndBalance')
   }
 
   return (
     <Container>
       <SubContainer>
         <h2>
-          <span>safe</span>dex
+          {/* <span>safe</span>dex */}
+          <span>LO</span>GO
         </h2>
         <Navigation>
           <ul>
@@ -66,7 +70,7 @@ export function Header() {
             </li>
           </ul>
         </Navigation>
-        {wallets && value ? (
+        {value ? (
           <Tag onClick={handleSetWallets}>
             <CurrencyGbp size={22} />
             {value}
