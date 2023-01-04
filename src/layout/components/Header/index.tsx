@@ -31,14 +31,12 @@ export function Header() {
 
     setWallets(wallets)
     setWalletValue(balance)
-    console.log('handleSetWallets')
   }
 
   function handleRemoveWalletAndBalance(e: MouseEvent) {
     e.stopPropagation()
     destroyWallets()
     destroyWalletValue()
-    console.log('handleRemoveWalletAndBalance')
   }
 
   return (
