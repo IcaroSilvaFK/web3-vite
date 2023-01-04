@@ -14,7 +14,8 @@ interface IMetamaskLogo {
   meshJson: MetaMaskPositions
 }
 
-export function MetamaskLogo({ meshJson }: IMetamaskLogo) {
+export function MetamaskLogo(props: IMetamaskLogo) {
+  const { meshJson } = props
   const metaRef = useRef<HTMLDivElement>(null)
 
   useEffect(
