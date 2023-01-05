@@ -1,8 +1,10 @@
 import { Info } from 'phosphor-react'
 import { useEffect } from 'react'
+import { Button } from '../../components/Button'
 
 import { Footer } from '../../components/Footer'
 import { MetamaskLogo } from '../../components/MetamaskLogo'
+import { users } from '../../mocks/users'
 import metamask from '../../utils/metamask/fox.json'
 import { toastInfo } from '../../utils/toasts/info'
 
@@ -11,6 +13,8 @@ import {
   ContainerFirstSection,
   ContainerSecondSection,
   SecondSection,
+  LastSection,
+  Form,
 } from './styles'
 
 export function Home() {
@@ -64,6 +68,24 @@ export function Home() {
           necessitatibus libero tempora.
         </span>
       </SecondSection>
+      <LastSection>
+        <div>
+          <ul>
+            {users.map((user) => (
+              <li key={user.id}>
+                <img src={user.avatar} alt={user.email} />
+              </li>
+            ))}
+          </ul>
+          <span>
+            <span>+12.592</span> people are already using
+          </span>
+        </div>
+      </LastSection>
+      <Form>
+        <input placeholder="Enter your email to find out more" />
+        <Button variant="solid">Contact</Button>
+      </Form>
       <Footer />
     </Container>
   )

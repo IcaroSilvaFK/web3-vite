@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <Container>
       <div>
-        <span>&copy;Todos os direitos reservados.</span>
+        <span>&copy;All rights reserved.</span>
       </div>
     </Container>
   )

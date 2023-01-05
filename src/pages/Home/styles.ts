@@ -12,7 +12,7 @@ export const ContainerFirstSection = styled.section`
   align-items: center;
   overflow: hidden;
   flex: 1;
-
+  min-height: 60vh;
   h1 {
     font-family: ${({ theme }) => theme.fonts.robotoMono};
     text-transform: uppercase;
@@ -21,6 +21,8 @@ export const ContainerFirstSection = styled.section`
   img {
     max-width: 500px;
     margin-right: -80px;
+    width: 100%;
+    height: 100%;
   }
 `
 
@@ -145,5 +147,61 @@ export const SecondSection = styled.section`
     -webkit-filter: blur(100px);
     opacity: 0.2;
     border-radius: 50%;
+  }
+`
+
+export const LastSection = styled.section`
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    ul {
+      display: flex;
+
+      li {
+        max-width: 70px;
+        border: 3px solid ${({ theme }) => theme.colors.gray[600]};
+        border-radius: 50%;
+        display: flex;
+        margin-left: -12px;
+        img {
+          border: 2px solid ${({ theme }) => theme.colors.yellow[500]};
+          border-radius: 50%;
+          width: 100%;
+        }
+      }
+    }
+    span {
+      font-size: 1.4rem;
+
+      span {
+        color: ${({ theme }) => theme.colors.green[500]};
+      }
+    }
+  }
+`
+
+export const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  gap: 4px;
+
+  input {
+    min-height: 40px;
+    width: 50%;
+    border-radius: 4px;
+
+    background: ${({ theme }) => theme.colors.gray[700]};
+
+    padding: 8px;
+
+    color: ${({ theme }) => theme.colors.gray[300]};
+    font-size: 1rem;
+
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.gray[300]};
+    }
   }
 `
