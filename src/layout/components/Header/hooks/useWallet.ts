@@ -42,6 +42,7 @@ export function useWallet() {
 
   function handleRemoveWalletAndBalance(e: MouseEvent) {
     e.stopPropagation()
+    walletService.destroyWallet()
     destroyWallets()
     destroyWalletValue()
   }

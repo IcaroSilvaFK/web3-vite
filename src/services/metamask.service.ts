@@ -4,6 +4,12 @@ import { NoBalanceFound } from '../errors/NoBalanceFound'
 import { NoMetaMaskFound } from '../errors/NoMetaMaskFound'
 import { WalletRefused } from '../errors/WalletRefused'
 
+interface ICreateNewTransactionRequestProps {
+  from: string
+  to: string
+  amount: number
+}
+
 class WalletBalance {
   private web3: Web3
 
@@ -22,7 +28,7 @@ class WalletBalance {
     const web3 = new Web3(window.ethereum)
 
     const wallet = await web3.eth.requestAccounts()
-
+    console.log(wallet)
     if (!wallet) {
       throw new WalletRefused('wallet is not available')
     }
@@ -39,6 +45,37 @@ class WalletBalance {
     } catch (err) {
       console.log(err)
       throw new NoBalanceFound('Balance is invalid')
+    }
+  }
+
+  async createTransaction(props: ICreateNewTransactionRequestProps) {
+    try {
+      const { amount, from, to } = props
+      const nonce = await this.web3.eth.getTransactionCount(from, 'latest')
+
+      const objectTransaction = {
+        from,
+        to,
+        value: this.web3.utils.toWei(String(amount)),
+        gas: 21000,
+        nonce,
+      }
+
+      const transaction = await this.web3.eth.sendTransaction(objectTransaction)
+
+      return transaction
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  async destroyWallet() {
+    try {
+      this.web3.eth.clearSubscriptions((error) => {
+        throw new Error(error as any)
+      })
+    } catch (err) {
+      console.log(err)
     }
   }
 }

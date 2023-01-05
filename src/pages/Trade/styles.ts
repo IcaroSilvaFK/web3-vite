@@ -54,6 +54,15 @@ export const Row = styled.div`
     box-shadow: none;
     padding: 0 12px;
     color: ${({ theme }) => theme.colors.gray[100]};
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
   }
 `
 
@@ -81,5 +90,10 @@ export const ContainerDescription = styled.div`
 
     padding: 8px;
     color: ${({ theme }) => theme.colors.gray[100]};
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 `

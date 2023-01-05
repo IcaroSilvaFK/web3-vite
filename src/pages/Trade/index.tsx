@@ -4,14 +4,16 @@ import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { walletService } from '../../services/metamask.service'
 
 import { Button } from '../../components/Button'
 
 import { Column, Container, ContainerDescription, Form, Row } from './styles'
+import { useWallets } from '../../store/wallet'
 
 const schema = z.object({
   to: z.string(),
-  amount: z.number(),
+  amount: z.number().positive(),
   description: z.string().optional(),
 })
 
@@ -19,7 +21,8 @@ type IFormProps = z.infer<typeof schema>
 
 export function Trade() {
   const toWalletId = useId()
-  const { register, handleSubmit } = useForm<IFormProps>({
+  const { wallets } = useWallets((state) => state)
+  const { register, handleSubmit, watch } = useForm<IFormProps>({
     defaultValues: {
       description: '',
       to: '',
@@ -27,8 +30,23 @@ export function Trade() {
     resolver: zodResolver(schema),
   })
 
-  function onSubmit(data: IFormProps) {
-    console.log(data)
+  const submitIsNotAvailable = !watch('amount') && !watch('to')
+
+  async function onSubmit(props: IFormProps) {
+    try {
+      const { amount, to } = props
+      if (!wallets) {
+        return
+      }
+      const response = await walletService.createTransaction({
+        amount,
+        to,
+        from: wallets[0],
+      })
+      console.log(response)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
@@ -84,7 +102,7 @@ export function Trade() {
           </ContainerDescription>
         </Column>
         <footer>
-          <Button>Send</Button>
+          <Button disabled={submitIsNotAvailable}>Send</Button>
         </footer>
       </Form>
     </Container>

@@ -30,4 +30,9 @@ export const Container = styled.button<ContainerProps>`
         background: ${darken(0.1, theme.colors.green[500])};
       }
     `}
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `
