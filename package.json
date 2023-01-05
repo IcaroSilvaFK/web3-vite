@@ -7,10 +7,11 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test":"vitest"
+    "test": "vitest"
   },
   "dependencies": {
     "@metamask/logo": "^3.1.1",
+    "date-fns": "^2.29.3",
     "jsdom": "^20.0.3",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",

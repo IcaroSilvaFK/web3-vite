@@ -10,6 +10,7 @@ import {
   Container,
   ContainerFirstSection,
   ContainerSecondSection,
+  SecondSection,
 } from './styles'
 
 export function Home() {
@@ -48,6 +49,21 @@ export function Home() {
           Consult Pool details before Depositing.
         </p>
       </ContainerSecondSection>
+      <SecondSection>
+        <h3>Open your mind to the future</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+          expedita, nihil eius praesentium laborum similique delectus animi
+          consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut
+          explicabo adipisci sit!
+        </p>
+        <span>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos et
+          inventore odit maiores mollitia rerum velit, veniam iste
+          exercitationem neque atque beatae repellat. Veniam neque numquam rerum
+          necessitatibus libero tempora.
+        </span>
+      </SecondSection>
       <Footer />
     </Container>
   )
