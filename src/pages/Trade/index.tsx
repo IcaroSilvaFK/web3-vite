@@ -1,9 +1,19 @@
 import { CaretRight, CurrencyEth, UserSwitch } from 'phosphor-react'
 import { useId } from 'react'
 import { Link } from 'react-router-dom'
+import { z } from 'zod'
+
 import { Button } from '../../components/Button'
 
 import { Column, Container, ContainerDescription, Form, Row } from './styles'
+
+const schema = z.object({
+  to: z.string(),
+  amount: z.number(),
+  description: z.string().optional(),
+})
+
+type IFormProps = z.
 
 export function Trade() {
   const toWalletId = useId()

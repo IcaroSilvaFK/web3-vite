@@ -39,7 +39,7 @@ export function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/trade">
+              <NavLink to="/singin">
                 <SignIn size={20} />
                 SignIn
               </NavLink>
