@@ -3,7 +3,7 @@ import { NoBalanceFound } from '../../../../errors/NoBalanceFound'
 
 import { NoMetaMaskFound } from '../../../../errors/NoMetaMaskFound'
 import { WalletRefused } from '../../../../errors/WalletRefused'
-import { WalletBalance } from '../../../../services/metamask.service'
+import { walletService } from '../../../../services/metamask.service'
 import { useWallets } from '../../../../store/wallet'
 import { toastError } from '../../../../utils/toasts/error'
 
@@ -15,12 +15,11 @@ export function useWallet() {
     destroyWalletValue,
     destroyWallets,
   } = useWallets((state) => state)
-  const web3 = new WalletBalance()
 
   async function handleSetWallets() {
     try {
-      const wallets = await web3.getMetamaskWallet()
-      const balance = await web3.getWalletsBalance(wallets[0])
+      const wallets = await walletService.getMetamaskWallet()
+      const balance = await walletService.getWalletsBalance(wallets[0])
 
       setWallets(wallets)
       setWalletValue(balance)

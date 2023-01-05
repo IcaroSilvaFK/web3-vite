@@ -4,7 +4,7 @@ import { NoBalanceFound } from '../errors/NoBalanceFound'
 import { NoMetaMaskFound } from '../errors/NoMetaMaskFound'
 import { WalletRefused } from '../errors/WalletRefused'
 
-export class WalletBalance {
+class WalletBalance {
   private web3: Web3
 
   constructor() {
@@ -42,3 +42,5 @@ export class WalletBalance {
     }
   }
 }
+
+export const walletService = new WalletBalance()
