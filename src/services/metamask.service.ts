@@ -1,4 +1,5 @@
 import Web3 from 'web3'
+import { NoBalanceFound } from '../errors/NoBalanceFound'
 
 import { NoMetaMaskFound } from '../errors/NoMetaMaskFound'
 import { WalletRefused } from '../errors/WalletRefused'
@@ -30,10 +31,14 @@ export class WalletBalance {
   }
 
   async getWalletsBalance(address: string): Promise<string> {
-    const balance = await this.web3.eth.getBalance(address)
+    try {
+      const balance = await this.web3.eth.getBalance(address)
 
-    const convertBalance = this.web3.utils.fromWei(balance)
-
-    return convertBalance
+      const convertBalance = this.web3.utils.fromWei(balance)
+      return convertBalance
+    } catch (err) {
+      console.log(err)
+      throw new NoBalanceFound('Balance is invalid')
+    }
   }
 }

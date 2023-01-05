@@ -1,4 +1,6 @@
 import { MouseEvent } from 'react'
+import { NoBalanceFound } from '../../../../errors/NoBalanceFound'
+
 import { NoMetaMaskFound } from '../../../../errors/NoMetaMaskFound'
 import { WalletRefused } from '../../../../errors/WalletRefused'
 import { WalletBalance } from '../../../../services/metamask.service'
@@ -23,13 +25,19 @@ export function useWallet() {
       setWallets(wallets)
       setWalletValue(balance)
     } catch (err) {
+      const error = <{ message: string }>err
+
       if (err instanceof NoMetaMaskFound) {
         toastError(err.message)
       }
       if (err instanceof WalletRefused) {
         toastError(err.message)
       }
-      console.log(err)
+      if (err instanceof NoBalanceFound) {
+        toastError(err.message)
+      }
+
+      toastError(error.message)
     }
   }
 
