@@ -1,7 +1,9 @@
 import { CaretRight, CurrencyEth, UserSwitch } from 'phosphor-react'
 import { useId } from 'react'
+import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 import { Button } from '../../components/Button'
 
@@ -13,10 +15,21 @@ const schema = z.object({
   description: z.string().optional(),
 })
 
-type IFormProps = z.
+type IFormProps = z.infer<typeof schema>
 
 export function Trade() {
   const toWalletId = useId()
+  const { register, handleSubmit } = useForm<IFormProps>({
+    defaultValues: {
+      description: '',
+      to: '',
+    },
+    resolver: zodResolver(schema),
+  })
+
+  function onSubmit(data: IFormProps) {
+    console.log(data)
+  }
 
   return (
     <Container>
@@ -31,12 +44,16 @@ export function Trade() {
           <li>trade</li>
         </ul>
       </header>
-      <Form>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Column>
           <label htmlFor={toWalletId}>Insert wallet address :</label>
           <Row>
             <UserSwitch size={32} />
-            <input placeholder="Enter wallet address" id={toWalletId} />
+            <input
+              placeholder="Enter wallet address"
+              id={toWalletId}
+              {...register('to')}
+            />
           </Row>
         </Column>
         <Column>
@@ -46,8 +63,10 @@ export function Trade() {
           <Row>
             <CurrencyEth size={32} />
             <input
+              type="number"
               placeholder="Enter the amount to be transferred"
               id={toWalletId}
+              {...register('amount', { valueAsNumber: true })}
             />
           </Row>
         </Column>
@@ -56,7 +75,12 @@ export function Trade() {
             Add a description for your transaction :
           </label>
           <ContainerDescription>
-            <textarea cols={100} rows={10} />
+            <textarea
+              cols={100}
+              rows={10}
+              {...register('description')}
+              disabled
+            />
           </ContainerDescription>
         </Column>
         <footer>
