@@ -1,5 +1,8 @@
 import Web3 from 'web3'
 
+import { NoMetaMaskFound } from '../errors/NoMetaMaskFound'
+import { WalletRefused } from '../errors/WalletRefused'
+
 export class WalletBalance {
   private web3: Web3
 
@@ -12,7 +15,7 @@ export class WalletBalance {
 
   async getMetamaskWallet(): Promise<string[]> {
     if (!window.ethereum) {
-      throw new Error('ethereum is not available')
+      throw new NoMetaMaskFound('ethereum is not available')
     }
 
     const web3 = new Web3(window.ethereum)
@@ -20,7 +23,7 @@ export class WalletBalance {
     const wallet = await web3.eth.requestAccounts()
 
     if (!wallet) {
-      throw new Error('wallet is not available')
+      throw new WalletRefused('wallet is not available')
     }
 
     return wallet

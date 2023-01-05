@@ -1,6 +1,9 @@
 import { MouseEvent } from 'react'
+import { NoMetaMaskFound } from '../../../../errors/NoMetaMaskFound'
+import { WalletRefused } from '../../../../errors/WalletRefused'
 import { WalletBalance } from '../../../../services/metamask.service'
 import { useWallets } from '../../../../store/wallet'
+import { toastError } from '../../../../utils/toasts/error'
 
 export function useWallet() {
   const {
@@ -13,11 +16,21 @@ export function useWallet() {
   const web3 = new WalletBalance()
 
   async function handleSetWallets() {
-    const wallets = await web3.getMetamaskWallet()
-    const balance = await web3.getWalletsBalance(wallets[0])
+    try {
+      const wallets = await web3.getMetamaskWallet()
+      const balance = await web3.getWalletsBalance(wallets[0])
 
-    setWallets(wallets)
-    setWalletValue(balance)
+      setWallets(wallets)
+      setWalletValue(balance)
+    } catch (err) {
+      if (err instanceof NoMetaMaskFound) {
+        toastError(err.message)
+      }
+      if (err instanceof WalletRefused) {
+        toastError(err.message)
+      }
+      console.log(err)
+    }
   }
 
   function handleRemoveWalletAndBalance(e: MouseEvent) {

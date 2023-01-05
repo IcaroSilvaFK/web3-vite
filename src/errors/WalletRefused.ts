@@ -1,4 +1,4 @@
-export class NoMetaMaskFound extends Error {
+export class WalletRefused extends Error {
   public message: string
   public exception: string | undefined
 
