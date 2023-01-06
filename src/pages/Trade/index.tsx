@@ -21,7 +21,7 @@ type IFormProps = z.infer<typeof schema>
 
 export function Trade() {
   const toWalletId = useId()
-  const { wallets } = useWallets((state) => state)
+  const { wallets, setWalletValue } = useWallets((state) => state)
   const { register, handleSubmit, watch } = useForm<IFormProps>({
     defaultValues: {
       description: '',
@@ -43,6 +43,8 @@ export function Trade() {
         to,
         from: wallets[0],
       })
+      const newBalance = await walletService.getWalletsBalance(wallets[0])
+      setWalletValue(newBalance)
       console.log(response)
     } catch (err) {
       console.log(err)

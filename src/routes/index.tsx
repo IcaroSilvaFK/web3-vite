@@ -13,6 +13,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+        errorElement: <h1>Herror</h1>,
       },
       {
         path: '/trade',

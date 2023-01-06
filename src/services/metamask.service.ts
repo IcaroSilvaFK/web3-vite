@@ -14,9 +14,6 @@ class WalletBalance {
   private web3: Web3
 
   constructor() {
-    if (!window.ethereum) {
-      throw new Error('ethereum is not available')
-    }
     this.web3 = new Web3(window.ethereum)
   }
 
@@ -28,7 +25,7 @@ class WalletBalance {
     const web3 = new Web3(window.ethereum)
 
     const wallet = await web3.eth.requestAccounts()
-    console.log(wallet)
+
     if (!wallet) {
       throw new WalletRefused('wallet is not available')
     }
@@ -40,6 +37,16 @@ class WalletBalance {
     try {
       const balance = await this.web3.eth.getBalance(address)
 
+      const convertBalance = this.web3.utils.fromWei(balance)
+      return convertBalance
+    } catch (err) {
+      console.log(err)
+      throw new NoBalanceFound('Balance is invalid')
+    }
+  }
+
+  convertBalance(balance: string): string {
+    try {
       const convertBalance = this.web3.utils.fromWei(balance)
       return convertBalance
     } catch (err) {
