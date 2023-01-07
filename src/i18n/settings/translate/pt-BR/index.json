@@ -22,7 +22,7 @@
       "walletButtonTitle":"Sair da carteira",
       "contact":"Contato",
       "send":"Enviar",
-      "switchLangModal":"Alternar para idioma"
+      "switchLangModal":"Alternar idioma"
     },
     "Footer":{
       "copy":"Todos os direitos reservados."
@@ -42,6 +42,17 @@
     "Modals": {
       "ChangeLangModal": {
         "title":"Linguagem"
+      }
+    },
+    "Toasts": {
+      "Infos": {
+        "providerWeb3Info":"só usamos a metamask como carteira digital"
+      },
+      "Errors": {
+        "ethereumNotFound":"ethereum não está disponível",
+        "walletRefused":"carteira não está disponível",
+        "balanceNotFound":"O saldo é inválido",
+        "genericError":"Desculpe estamos enfrentando problemas"
       }
     }
   }

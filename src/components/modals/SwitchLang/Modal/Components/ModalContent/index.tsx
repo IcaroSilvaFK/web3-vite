@@ -8,7 +8,7 @@ export function ModalContent() {
   const { t } = useTranslation()
 
   return (
-    <Container>
+    <Container onClick={(e) => e.stopPropagation()}>
       <ModalHeader title={t('Modals.ChangeLangModal.title')} />
       <ModalBody />
     </Container>

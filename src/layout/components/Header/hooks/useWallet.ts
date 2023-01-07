@@ -1,6 +1,7 @@
 import { MouseEvent } from 'react'
-import { NoBalanceFound } from '../../../../errors/NoBalanceFound'
+import { useTranslation } from 'react-i18next'
 
+import { NoBalanceFound } from '../../../../errors/NoBalanceFound'
 import { NoMetaMaskFound } from '../../../../errors/NoMetaMaskFound'
 import { WalletRefused } from '../../../../errors/WalletRefused'
 import { walletService } from '../../../../services/metamask.service'
@@ -15,6 +16,7 @@ export function useWallet() {
     destroyWalletValue,
     destroyWallets,
   } = useWallets((state) => state)
+  const { t } = useTranslation()
 
   async function handleSetWallets() {
     try {
@@ -24,19 +26,16 @@ export function useWallet() {
       setWallets(wallets)
       setWalletValue(balance)
     } catch (err) {
-      const error = <{ message: string }>err
-
       if (err instanceof NoMetaMaskFound) {
-        toastError(err.message)
+        toastError(t('Toasts.Errors.ethereumNotFound'))
       }
       if (err instanceof WalletRefused) {
-        toastError(err.message)
+        toastError(t('Toasts.Errors.walletRefused'))
       }
       if (err instanceof NoBalanceFound) {
-        toastError(err.message)
+        toastError(t('Toasts.Errors.balanceNotFound'))
       }
-
-      toastError(error.message)
+      toastError(t('Toasts.Errors.genericError'))
     }
   }
 

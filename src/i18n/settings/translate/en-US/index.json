@@ -44,6 +44,17 @@
       "ChangeLangModal": {
         "title":"Language"
       }
+    },
+    "Toasts": {
+      "Infos": {
+        "providerWeb3Info":"we only use the metamask as a digital wallet"
+      },
+      "Errors": {
+        "ethereumNotFound":"ethereum is not available",
+        "walletRefused":"wallet is not available",
+        "balanceNotFound":"Balance is invalid",
+        "genericError":"Sorry we are having problems"
+      }
     }
   }
 }

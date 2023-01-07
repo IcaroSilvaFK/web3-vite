@@ -21,9 +21,13 @@ import {
 export function Home() {
   const { t } = useTranslation()
 
-  useEffect(() => {
-    toastInfo('we only use the metamask as a digital wallet')
-  }, [])
+  useEffect(
+    () => {
+      toastInfo(t('Toasts.Infos.providerWeb3Info') as string)
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  )
 
   return (
     <Container>

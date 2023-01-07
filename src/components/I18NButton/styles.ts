@@ -13,4 +13,11 @@ export const Container = styled.button`
 
   background: ${({ theme }) => theme.colors.yellow[500]};
   z-index: 1;
+
+  &:hover {
+    svg {
+      transform: scale(1.2);
+      transition: all linear 0.3s;
+    }
+  }
 `
