@@ -9,6 +9,8 @@ import { GlobalCSS } from './styles/global'
 import { theme } from './styles/theme'
 import 'react-toastify/dist/ReactToastify.css'
 
+import './i18n/settings'
+
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <ThemeProvider theme={theme}>

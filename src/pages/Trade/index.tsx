@@ -4,8 +4,9 @@ import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { walletService } from '../../services/metamask.service'
+import { useTranslation } from 'react-i18next'
 
+import { walletService } from '../../services/metamask.service'
 import { Button } from '../../components/Button'
 
 import { Column, Container, ContainerDescription, Form, Row } from './styles'
@@ -21,6 +22,7 @@ type IFormProps = z.infer<typeof schema>
 
 export function Trade() {
   const toWalletId = useId()
+  const { t } = useTranslation()
   const { wallets, setWalletValue } = useWallets((state) => state)
   const { register, handleSubmit, watch } = useForm<IFormProps>({
     defaultValues: {
@@ -56,44 +58,40 @@ export function Trade() {
       <header>
         <ul>
           <li>
-            <Link to="/">home</Link>
+            <Link to="/">{t('home')}</Link>
           </li>
           <li>
             <CaretRight size={18} />
           </li>
-          <li>trade</li>
+          <li>{t('trader')}</li>
         </ul>
       </header>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Column>
-          <label htmlFor={toWalletId}>Insert wallet address :</label>
+          <label htmlFor={toWalletId}>{t('walletAddress')} :</label>
           <Row>
             <UserSwitch size={32} />
             <input
-              placeholder="Enter wallet address"
+              placeholder={t('placeholderAddress') as string}
               id={toWalletId}
               {...register('to')}
             />
           </Row>
         </Column>
         <Column>
-          <label htmlFor={toWalletId}>
-            Enter the amount to be transferred :
-          </label>
+          <label htmlFor={toWalletId}>{t('amountTransferred')} :</label>
           <Row>
             <CurrencyEth size={32} />
             <input
               type="number"
-              placeholder="Enter the amount to be transferred"
+              placeholder={t('amountTransferredPlaceholder') as string}
               id={toWalletId}
               {...register('amount', { valueAsNumber: true })}
             />
           </Row>
         </Column>
         <Column>
-          <label htmlFor={toWalletId}>
-            Add a description for your transaction :
-          </label>
+          <label htmlFor={toWalletId}>{t('transactionTransaction')} :</label>
           <ContainerDescription>
             <textarea
               cols={100}
@@ -104,7 +102,7 @@ export function Trade() {
           </ContainerDescription>
         </Column>
         <footer>
-          <Button disabled={submitIsNotAvailable}>Send</Button>
+          <Button disabled={submitIsNotAvailable}>{t('send')}</Button>
         </footer>
       </Form>
     </Container>

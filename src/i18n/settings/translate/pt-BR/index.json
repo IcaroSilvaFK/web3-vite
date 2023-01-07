@@ -1,0 +1,25 @@
+{
+  "translation":{
+    "welcomeMessage": "CONECTE SUA CARTEIRA E COMECE!",
+    "home":"Início",
+    "trader":"Trade",
+    "signIn":"Entra",
+    "walletButton":"Conecte sua carteira",
+    "joinRewards":"JUNTE-SE AO NOSSO SISTEMA DE RECOMPENSAS E APOSTAS",
+    "paragraphCryptocurrencies":"Deposite criptomoedas e tokens nativos (ERC-20) em nossos pools e gere receitas passivas de criptomoedas. Atualmente a Danki Finance é uma plataforma Web3 brasileira única com contratos eleitos e segurança. E expandindo internacionalmente!",
+    "paragraphWithdraw":"Você pode sacar ou depositar a qualquer hora que quiser em qualquer pool que escolher participar. Algumas piscinas cobram uma taxa de entrada, outras não. Consulte os detalhes do Pool antes de depositar.",
+    "contractsPools":"Todos os nossos contratos (piscinas, jogos e mais) são auditados e seguros. Invista com segurança.",
+    "openYourMind":"ABRA SUA MENTE PARA O FUTURO",
+    "firstMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
+    "secondMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
+    "peopleAlreadyUsing":"as pessoas já estão usando",
+    "copy":"Todos os direitos reservados.",
+    "contact":"Contato",
+    "amountTransferred":"Digite o valor a ser transferido",
+    "walletAddress":"Inserir endereço da carteira",
+    "transactionTransaction":"Adicione uma descrição para sua transação",
+    "send":"Enviar",
+    "placeholderAddress":"Digite o endereço da carteira",
+    "amountTransferredPlaceholder":"Digite o valor a ser transferido"
+  }
+}

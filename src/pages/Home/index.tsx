@@ -1,7 +1,8 @@
 import { Info } from 'phosphor-react'
 import { useEffect } from 'react'
-import { Button } from '../../components/Button'
+import { useTranslation } from 'react-i18next'
 
+import { Button } from '../../components/Button'
 import { Footer } from '../../components/Footer'
 import { MetamaskLogo } from '../../components/MetamaskLogo'
 import { users } from '../../mocks/users'
@@ -18,6 +19,8 @@ import {
 } from './styles'
 
 export function Home() {
+  const { t } = useTranslation()
+
   useEffect(() => {
     toastInfo('we only use the metamask as a digital wallet')
   }, [])
@@ -26,47 +29,25 @@ export function Home() {
     <Container>
       <ContainerFirstSection>
         <div>
-          <h1>Connect your wallet and get started!</h1>
+          <h1>{t('welcomeMessage')}</h1>
           <MetamaskLogo meshJson={metamask} />
         </div>
 
         <img src="/assets/E-Wallet-bro.svg" alt="" />
       </ContainerFirstSection>
       <ContainerSecondSection>
-        <h3>Join our Pool Rewards & Staking System</h3>
+        <h3>{t('joinRewards')}</h3>
         <div>
           <Info size={25} weight="bold" />
-          <p>
-            Deposit Native Cryptocurrencies and Tokens (ERC-20) into our Pools
-            and Generate Passive Cryptocurrency Revenue. Currently Danki Finance
-            is a unique Brazilian Web3 platform with s elected contracts and
-            security. And expanding internationally!
-          </p>
+          <p>{t('paragraphCryptocurrencies')}</p>
         </div>
-        <strong>
-          🛡 All our contracts (pools, games and more) are audited and secure.
-          Invest safely.
-        </strong>
-        <p>
-          You can withdraw or deposit any time you want to any pool you choose
-          to participate. Some pools have a fee to enter, others don&apos;t.
-          Consult Pool details before Depositing.
-        </p>
+        <strong>🛡{t('contractsPools')}</strong>
+        <p>{t('paragraphWithdraw')}</p>
       </ContainerSecondSection>
       <SecondSection>
-        <h3>Open your mind to the future</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-          expedita, nihil eius praesentium laborum similique delectus animi
-          consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut
-          explicabo adipisci sit!
-        </p>
-        <span>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos et
-          inventore odit maiores mollitia rerum velit, veniam iste
-          exercitationem neque atque beatae repellat. Veniam neque numquam rerum
-          necessitatibus libero tempora.
-        </span>
+        <h3>{t('openYourMind')}</h3>
+        <p>{t('firstMindParagraph')}</p>
+        <span>{t('firstMindParagraph')}</span>
       </SecondSection>
       <LastSection>
         <div>
@@ -78,13 +59,13 @@ export function Home() {
             ))}
           </ul>
           <span>
-            <span>+12.592</span> people are already using
+            <span>+12.592</span> {t('peopleAlreadyUsing')}
           </span>
         </div>
       </LastSection>
       <Form>
         <input placeholder="Enter your email to find out more" />
-        <Button variant="solid">Contact</Button>
+        <Button variant="solid">{t('contact')}</Button>
       </Form>
       <Footer />
     </Container>
