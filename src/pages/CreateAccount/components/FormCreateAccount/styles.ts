@@ -1,50 +1,40 @@
 import styled, { css } from 'styled-components'
 
-interface IRowProps {
-  shadowColor?: 'red' | 'green'
+type RowProps = {
+  outlineColor?: 'red' | 'green'
 }
 
 export const Container = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 22px;
-
-  margin-top: 44px;
+  gap: 12px;
 
   footer {
+    width: 100%;
+    margin-top: 12px;
+
     button {
       width: 100%;
-      padding: 12px 0;
     }
   }
-
-  &::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 1px;
-    background: ${({ theme }) => theme.colors.gray[300]};
-
-    margin: 0 auto;
-  }
 `
 
-export const Column = styled.div`
+export const Row = styled.div<RowProps>`
   display: flex;
-  flex-direction: column;
-`
-
-export const Row = styled.div<IRowProps>`
-  display: flex;
-  align-items: center;
 
   background: ${({ theme }) => theme.colors.white};
+  padding: 8px;
+  border-radius: 4px;
 
   min-width: 300px;
-  height: 40px;
-  border-radius: 4px;
-  padding: 8px;
+  min-height: 40px;
 
+  button {
+    background: transparent;
+  }
+  svg {
+    color: ${({ theme }) => theme.colors.gray[900]};
+  }
   input {
     background: transparent;
     box-shadow: none;
@@ -55,17 +45,10 @@ export const Row = styled.div<IRowProps>`
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.green[500]};
   }
 
-  button {
-    background: transparent;
-    cursor: pointer;
-    box-shadow: none;
-  }
-
-  ${({ theme, shadowColor }) =>
-    shadowColor === 'red' &&
+  ${({ outlineColor, theme }) =>
+    outlineColor === 'red' &&
     css`
       box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.red[500]};
-
       &:focus-within {
         box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.red[500]};
       }

@@ -1,4 +1,4 @@
-import { darken } from 'polished'
+import { darken, transparentize } from 'polished'
 import styled, { css } from 'styled-components'
 import { ButtonVariants } from './types'
 
@@ -30,6 +30,19 @@ export const Container = styled.button<ContainerProps>`
         background: ${darken(0.1, theme.colors.green[500])};
       }
     `}
+
+  ${({ variant, theme }) =>
+    variant === 'ghost' &&
+    css`
+      background: transparent;
+      color: ${theme.colors.green[500]};
+
+      &:hover {
+        background: ${transparentize(0.8, theme.colors.green[500])};
+        color: ${({ theme }) => theme.colors.white};
+      }
+    `}
+
 
   &:disabled {
     opacity: 0.5;
