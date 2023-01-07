@@ -53,7 +53,12 @@
         "ethereumNotFound":"ethereum is not available",
         "walletRefused":"wallet is not available",
         "balanceNotFound":"Balance is invalid",
-        "genericError":"Sorry we are having problems"
+        "genericError":"Sorry we are having problems",
+        "errorOnTransactionSend":"We're having trouble completing your transaction, please try again."
+      },
+      "Success": {
+        "newTransactionSuccess": "Transaction done successfully",
+        "newTransactionDeclined": "Declined transaction"
       }
     }
   }

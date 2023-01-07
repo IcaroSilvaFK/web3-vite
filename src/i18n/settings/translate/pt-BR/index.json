@@ -52,7 +52,12 @@
         "ethereumNotFound":"ethereum não está disponível",
         "walletRefused":"carteira não está disponível",
         "balanceNotFound":"O saldo é inválido",
-        "genericError":"Desculpe estamos enfrentando problemas"
+        "genericError":"Desculpe estamos enfrentando problemas",
+        "errorOnTransactionSend":"Estamos com problemas  para concluir a transação por favor tente novamente."
+      },
+      "Success": {
+        "newTransactionSuccess": "Transação feita com sucesso",
+        "newTransactionDeclined": "Transação recusada"
       }
     }
   }
