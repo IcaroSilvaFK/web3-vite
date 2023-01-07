@@ -16,6 +16,9 @@
       "Login":{
         "subTitle":"Entre com sua conta",
         "divider":"ou"
+      },
+      "CreateAccount": {
+        "title":"BEM-VINDO A CRIAR CONTA"
       }
     },
     
@@ -31,7 +34,9 @@
       "contact":"Contato",
       "send":"Enviar",
       "switchLangModal":"Alternar idioma",
-      "loginPageSignIn":"entrar"
+      "loginPageSignIn":"entrar",
+      "back":"Voltar",
+      "createAccount":"Criar Conta"
     },
     "Footer":{
       "copy":"Todos os direitos reservados."
@@ -42,7 +47,10 @@
         "amountTransferredPlaceholder":"Digite o valor a ser transferido",
         "findOutMorePlaceholder":"Digite seu e-mail para saber mais",
         "loginPageEmailPlaceholder":"Digite seu e-mail",
-        "loginPagePasswordPlaceholder":"Coloque sua senha"
+        "loginPagePasswordPlaceholder":"Coloque sua senha",
+        "createAccountPageEmailPlaceholder":"digite seu e-mail",
+        "createAccountPagePasswordPlaceholder":"digite sua senha",
+        "createAccountPageUsernamePlaceholder":"digite se nome de usuário"
       },
       "Labels": {
         "transactionTransaction":"Adicione uma descrição para sua transação",

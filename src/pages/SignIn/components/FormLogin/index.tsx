@@ -89,7 +89,7 @@ export function FormLogin() {
         </button>
       </Row>
       <footer>
-        <Button variant="solid" disabled={isValid}>
+        <Button variant="solid" disabled={!isValid}>
           {t('Buttons.loginPageSignIn')}
         </Button>
       </footer>

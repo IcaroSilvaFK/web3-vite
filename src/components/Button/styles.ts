@@ -43,6 +43,18 @@ export const Container = styled.button<ContainerProps>`
       }
     `}
 
+    ${({ variant, theme }) =>
+    variant === 'link' &&
+    css`
+      background: transparent;
+      color: ${theme.colors.green[500]};
+      text-decoration: underline;
+
+      &:hover {
+        color: ${({ theme }) => darken(0.1, theme.colors.green[500])};
+      }
+    `}
+
 
   &:disabled {
     opacity: 0.5;

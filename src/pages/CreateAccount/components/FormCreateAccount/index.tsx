@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useTranslation } from 'react-i18next'
 
 import { Button } from '../../../../components/Button'
 import { Container, Row } from './styles'
@@ -19,6 +20,7 @@ type FormProps = z.infer<typeof schema>
 
 export function FormCreateAccount() {
   const [inputType, setInputType] = useState<InputType>('password')
+  const { t } = useTranslation()
   const {
     register,
     handleSubmit,
@@ -33,6 +35,7 @@ export function FormCreateAccount() {
     },
     resolver: zodResolver(schema),
   })
+
   const isValidEmailFormState = watch('email')
     ? isValidEmail(watch('email'))
     : true
@@ -51,7 +54,9 @@ export function FormCreateAccount() {
       <Row outlineColor={isValidEmailFormState ? 'green' : 'red'}>
         <input
           type="email"
-          placeholder="Typing your email"
+          placeholder={
+            t('Inputs.Placeholders.createAccountPageEmailPlaceholder') as string
+          }
           {...register('email')}
         />
         <At size={22} />
@@ -59,7 +64,11 @@ export function FormCreateAccount() {
       <Row>
         <input
           type="text"
-          placeholder="Typing your username"
+          placeholder={
+            t(
+              'Inputs.Placeholders.createAccountPageUsernamePlaceholder',
+            ) as string
+          }
           {...register('username')}
         />
         <User size={22} />
@@ -67,7 +76,11 @@ export function FormCreateAccount() {
       <Row>
         <input
           type={inputType}
-          placeholder="Typing your password"
+          placeholder={
+            t(
+              'Inputs.Placeholders.createAccountPagePasswordPlaceholder',
+            ) as string
+          }
           {...register('password')}
         />
         <button type="button" onClick={handleChangeInputType}>
@@ -81,7 +94,7 @@ export function FormCreateAccount() {
 
       <footer>
         <Button variant="ghost" disabled={!isValid}>
-          Create Account
+          {t('Buttons.createAccount')}
         </Button>
       </footer>
     </Container>

@@ -8,6 +8,14 @@ export const Container = styled.div`
 
 export const LeftSection = styled.section`
   flex: 1;
+  background: ${({ theme }) => theme.colors.white};
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+  img {
+    max-width: 500px;
+  }
 `
 export const RightSection = styled.section`
   flex: 1;

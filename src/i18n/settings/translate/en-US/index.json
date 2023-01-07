@@ -17,6 +17,9 @@
       "Login":{
         "subTitle":"Sign in with your Account",
         "divider":"or"
+      },
+      "CreateAccount": {
+        "title":"WELCOME TO CREATE ACCOUNT"
       }
     },
     
@@ -32,7 +35,9 @@
       "contact":"Contact",
       "send":"Send",
       "switchLangModal":"Switch to language",
-      "loginPageSignIn":"sign in"
+      "loginPageSignIn":"sign in",
+      "back":"Back",
+      "createAccount":"Create Account"
     },
     "Footer":{
       "copy":"All rights reserved."
@@ -43,7 +48,10 @@
         "amountTransferredPlaceholder":"Enter the amount to be transferred",
         "findOutMorePlaceholder":"Enter your email to find out more",
         "loginPageEmailPlaceholder":"Enter your email",
-        "loginPagePasswordPlaceholder":"Enter your password"
+        "loginPagePasswordPlaceholder":"Enter your password",
+        "createAccountPageEmailPlaceholder":"type your email",
+        "createAccountPagePasswordPlaceholder":"type your password",
+        "createAccountPageUsernamePlaceholder":"type your username"
       },
       "Labels": {
         "transactionTransaction":"Add a description for your transaction",
