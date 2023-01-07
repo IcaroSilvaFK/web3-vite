@@ -10,6 +10,7 @@ import { theme } from './styles/theme'
 import 'react-toastify/dist/ReactToastify.css'
 
 import './i18n/settings'
+import { SwitchLangModal } from './components/modals/SwitchLang'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root') as HTMLElement).render(
       <GlobalCSS />
       <RouterProvider router={router} />
       <ToastContainer />
+      <SwitchLangModal />
     </ThemeProvider>
   </StrictMode>,
 )

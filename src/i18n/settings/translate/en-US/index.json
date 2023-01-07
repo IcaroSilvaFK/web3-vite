@@ -38,6 +38,11 @@
         "amountTransferred":"Enter the amount to be transferred",
         "walletAddress":"Insert wallet address"
       }
+    },
+    "Modals": {
+      "ChangeLangModal": {
+        "title":"Language"
+      }
     }
   }
 }

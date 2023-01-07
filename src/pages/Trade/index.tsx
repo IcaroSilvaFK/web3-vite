@@ -24,7 +24,7 @@ export function Trade() {
   const toWalletId = useId()
   const { t } = useTranslation()
   const { wallets, setWalletValue } = useWallets((state) => state)
-  const { register, handleSubmit, watch } = useForm<IFormProps>({
+  const { register, handleSubmit, watch, reset } = useForm<IFormProps>({
     defaultValues: {
       description: '',
       to: '',
@@ -48,6 +48,7 @@ export function Trade() {
       const newBalance = await walletService.getWalletsBalance(wallets[0])
       setWalletValue(newBalance)
       console.log(response)
+      reset()
     } catch (err) {
       console.log(err)
     }

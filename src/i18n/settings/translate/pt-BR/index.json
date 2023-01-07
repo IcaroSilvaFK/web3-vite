@@ -37,6 +37,11 @@
         "amountTransferred":"Digite o valor a ser transferido",
         "walletAddress":"Inserir endereço da carteira"
       }
+    },
+    "Modals": {
+      "ChangeLangModal": {
+        "title":"Linguagem"
+      }
     }
   }
 }
