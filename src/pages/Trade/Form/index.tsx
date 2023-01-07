@@ -40,7 +40,7 @@ export function Form() {
     try {
       const { amount, to } = props
       if (!wallets) {
-        return
+        return toastInfo(t('Toasts.Infos.walletIsNotProvide'))
       }
       setIsLoading(true)
       const response = await walletService.createTransaction({
@@ -56,7 +56,6 @@ export function Form() {
         setWalletValue(newBalance)
         toastSuccess(t('Toasts.Success.newTransactionSuccess'))
       }
-      console.log(response)
       reset()
       setIsLoading(false)
     } catch (err) {

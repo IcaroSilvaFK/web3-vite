@@ -46,7 +46,8 @@
     },
     "Toasts": {
       "Infos": {
-        "providerWeb3Info":"só usamos a metamask como carteira digital"
+        "providerWeb3Info":"só usamos a metamask como carteira digital",
+        "walletIsNotProvide":"Voce precisa de uma carteira na metamask para conseguir transferir"
       },
       "Errors": {
         "ethereumNotFound":"ethereum não está disponível",

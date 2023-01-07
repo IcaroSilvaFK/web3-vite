@@ -47,7 +47,8 @@
     },
     "Toasts": {
       "Infos": {
-        "providerWeb3Info":"we only use the metamask as a digital wallet"
+        "providerWeb3Info":"we only use the metamask as a digital wallet",
+        "walletIsNotProvide":"You need a metamask wallet to be able to transfer"
       },
       "Errors": {
         "ethereumNotFound":"ethereum is not available",
