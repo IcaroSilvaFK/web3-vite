@@ -1,5 +1,16 @@
 import { transparentize } from 'polished'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const initialPosition = keyframes`
+  0%{
+    right: -100px;
+    opacity: 0;
+  }
+  100%{
+    right: 0;
+    opacity: 1;
+  }
+`
 
 export const Container = styled.div`
   position: fixed;
@@ -16,4 +27,6 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  animation: ${initialPosition} 0.3s linear;
 `

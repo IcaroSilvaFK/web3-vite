@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { useTheme } from 'styled-components'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useTranslation } from 'react-i18next'
 
 import { Button } from '../../../../components/Button'
 import { isValidEmail } from '../../../../utils/asserts/isValidEmail'
@@ -39,6 +40,7 @@ export function FormLogin() {
   const isValidEmailFormField = watch('email')
     ? isValidEmail(watch('email'))
     : true
+  const { t } = useTranslation()
 
   async function onSubmit(data: IFormProps) {
     try {
@@ -59,7 +61,9 @@ export function FormLogin() {
       <Row shadowColor={!isValidEmailFormField ? 'red' : 'green'}>
         <input
           type="text"
-          placeholder="Enter your email"
+          placeholder={
+            t('Inputs.Placeholders.loginPageEmailPlaceholder') as string
+          }
           {...register('email')}
         />
         {isValidEmailFormField ? (
@@ -71,7 +75,9 @@ export function FormLogin() {
       <Row>
         <input
           type={inputType}
-          placeholder="Enter your Password"
+          placeholder={
+            t('Inputs.Placeholders.loginPagePasswordPlaceholder') as string
+          }
           {...register('password')}
         />
         <button onClick={handleChangeInputType}>
@@ -84,7 +90,7 @@ export function FormLogin() {
       </Row>
       <footer>
         <Button variant="solid" disabled={isValid}>
-          Sign In
+          {t('Buttons.loginPageSignIn')}
         </Button>
       </footer>
     </Container>
