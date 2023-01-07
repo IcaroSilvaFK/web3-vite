@@ -58,40 +58,50 @@ export function Trade() {
       <header>
         <ul>
           <li>
-            <Link to="/">{t('home')}</Link>
+            <Link to="/">{t('Links.home')}</Link>
           </li>
           <li>
             <CaretRight size={18} />
           </li>
-          <li>{t('trader')}</li>
+          <li>{t('Links.trader')}</li>
         </ul>
       </header>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Column>
-          <label htmlFor={toWalletId}>{t('walletAddress')} :</label>
+          <label htmlFor={toWalletId}>
+            {t('Inputs.Labels.walletAddress')} :
+          </label>
           <Row>
             <UserSwitch size={32} />
             <input
-              placeholder={t('placeholderAddress') as string}
+              placeholder={
+                t('Inputs.Placeholders.placeholderAddress') as string
+              }
               id={toWalletId}
               {...register('to')}
             />
           </Row>
         </Column>
         <Column>
-          <label htmlFor={toWalletId}>{t('amountTransferred')} :</label>
+          <label htmlFor={toWalletId}>
+            {t('Inputs.Labels.amountTransferred')} :
+          </label>
           <Row>
             <CurrencyEth size={32} />
             <input
               type="number"
-              placeholder={t('amountTransferredPlaceholder') as string}
+              placeholder={
+                t('Inputs.Placeholders.amountTransferredPlaceholder') as string
+              }
               id={toWalletId}
               {...register('amount', { valueAsNumber: true })}
             />
           </Row>
         </Column>
         <Column>
-          <label htmlFor={toWalletId}>{t('transactionTransaction')} :</label>
+          <label htmlFor={toWalletId}>
+            {t('Inputs.Labels.transactionTransaction')} :
+          </label>
           <ContainerDescription>
             <textarea
               cols={100}

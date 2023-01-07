@@ -9,7 +9,7 @@ interface IUseWalletProps {
   destroyWalletValue(): void
 }
 
-export const useWallets = create<IUseWalletProps>((set) => ({
+export const useWallets = create<IUseWalletProps>()((set) => ({
   wallets: null,
   value: null,
   setWallets(wallets) {

@@ -29,25 +29,25 @@ export function Home() {
     <Container>
       <ContainerFirstSection>
         <div>
-          <h1>{t('welcomeMessage')}</h1>
+          <h1>{t('Home.welcomeMessage')}</h1>
           <MetamaskLogo meshJson={metamask} />
         </div>
 
         <img src="/assets/E-Wallet-bro.svg" alt="" />
       </ContainerFirstSection>
       <ContainerSecondSection>
-        <h3>{t('joinRewards')}</h3>
+        <h3>{t('Home.joinRewards')}</h3>
         <div>
           <Info size={25} weight="bold" />
-          <p>{t('paragraphCryptocurrencies')}</p>
+          <p>{t('Home.paragraphCryptocurrencies')}</p>
         </div>
-        <strong>🛡{t('contractsPools')}</strong>
-        <p>{t('paragraphWithdraw')}</p>
+        <strong>🛡 {t('Home.contractsPools')}</strong>
+        <p>{t('Home.paragraphWithdraw')}</p>
       </ContainerSecondSection>
       <SecondSection>
-        <h3>{t('openYourMind')}</h3>
-        <p>{t('firstMindParagraph')}</p>
-        <span>{t('firstMindParagraph')}</span>
+        <h3>{t('Home.openYourMind')}</h3>
+        <p>{t('Home.firstMindParagraph')}</p>
+        <span>{t('Home.secondMindParagraph')}</span>
       </SecondSection>
       <LastSection>
         <div>
@@ -59,13 +59,17 @@ export function Home() {
             ))}
           </ul>
           <span>
-            <span>+12.592</span> {t('peopleAlreadyUsing')}
+            <span>+12.592</span> {t('Home.peopleAlreadyUsing')}
           </span>
         </div>
       </LastSection>
       <Form>
-        <input placeholder="Enter your email to find out more" />
-        <Button variant="solid">{t('contact')}</Button>
+        <input
+          placeholder={
+            t('Inputs.Placeholders.findOutMorePlaceholder') as string
+          }
+        />
+        <Button variant="solid">{t('Buttons.contact')}</Button>
       </Form>
       <Footer />
     </Container>

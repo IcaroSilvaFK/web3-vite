@@ -1,25 +1,43 @@
+
+
 {
   "translation":{
-    "welcomeMessage": "CONNECT YOUR WALLET AND GET STARTED!",
-    "home":"Home",
-    "trader":"Trader",
-    "signIn":"SigIn",
-    "walletButton":"Connect your wallet",
-    "joinRewards":"JOIN OUR POOL REWARDS & STAKING SYSTEM",
-    "paragraphCryptocurrencies":"Deposit Native Cryptocurrencies and Tokens (ERC-20) into our Pools and Generate Passive Cryptocurrency Revenue. Currently Danki Finance is a unique Brazilian Web3 platform with s elected contracts and security. And expanding internationally!",
-    "paragraphWithdraw":"You can withdraw or deposit any time you want to any pool you choose to participate. Some pools have a fee to enter, others don't. Consult Pool details before Depositing.",
-    "contractsPools":"All our contracts (pools, games and more) are audited and secure. Invest safely.",
-    "openYourMind":"OPEN YOUR MIND TO THE FUTURE",
-    "firstMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
-    "secondMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
-    "peopleAlreadyUsing":"people are already using",
-    "copy":"All rights reserved.",
-    "contact":"Contact",
-    "walletAddress":"Insert wallet address",
-    "amountTransferred":"Enter the amount to be transferred",
-    "transactionTransaction":"Add a description for your transaction",
-    "send":"Send",
-    "placeholderAddress":"Enter wallet address",
-    "amountTransferredPlaceholder":"Enter the amount to be transferred"
+    "Home" : {
+      "welcomeMessage": "CONNECT YOUR WALLET AND GET STARTED!",
+      "joinRewards":"JOIN OUR POOL REWARDS & STAKING SYSTEM",
+      "paragraphCryptocurrencies":"Deposit Native Cryptocurrencies and Tokens (ERC-20) into our Pools and Generate Passive Cryptocurrency Revenue. Currently Danki Finance is a unique Brazilian Web3 platform with s elected contracts and security. And expanding internationally!",
+      "paragraphWithdraw":"You can withdraw or deposit any time you want to any pool you choose to participate. Some pools have a fee to enter, others don't. Consult Pool details before Depositing.",
+      "contractsPools":"All our contracts (pools, games and more) are audited and secure. Invest safely.",
+      "openYourMind":"OPEN YOUR MIND TO THE FUTURE",
+      "firstMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
+      "secondMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
+      "peopleAlreadyUsing":"people are already using"
+    },
+    "Links": {
+      "home":"Home",
+      "trader":"Trader",
+      "signIn":"SigIn"
+    } ,
+    "Buttons": {
+      "walletButton":"Connect your wallet",
+      "walletButtonTitle":"Exit wallet",
+      "contact":"Contact",
+      "send":"Send"
+    },
+    "Footer":{
+      "copy":"All rights reserved."
+    },
+    "Inputs": {
+      "Placeholders": {
+        "placeholderAddress":"Enter wallet address",
+        "amountTransferredPlaceholder":"Enter the amount to be transferred",
+        "findOutMorePlaceholder":"Enter your email to find out more"
+      },
+      "Labels": {
+        "transactionTransaction":"Add a description for your transaction",
+        "amountTransferred":"Enter the amount to be transferred",
+        "walletAddress":"Insert wallet address"
+      }
+    }
   }
 }

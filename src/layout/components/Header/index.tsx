@@ -7,15 +7,16 @@ import {
   SignOut,
 } from 'phosphor-react'
 import { NavLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 import { Button } from '../../../components/Button'
-
 import { useWallet } from './hooks/useWallet'
 
 import { Container, Navigation, SubContainer, Tag } from './styles'
 
 export function Header() {
   const { handleRemoveWalletAndBalance, handleSetWallets, value } = useWallet()
+  const { t } = useTranslation()
 
   return (
     <Container>
@@ -29,19 +30,19 @@ export function Header() {
             <li>
               <NavLink to="/">
                 <House size={20} />
-                Home
+                {t('Links.home')}
               </NavLink>
             </li>
             <li>
               <NavLink to="/trade">
                 <Path size={20} />
-                Trade
+                {t('Links.trader')}
               </NavLink>
             </li>
             <li>
               <NavLink to="/singin">
                 <SignIn size={20} />
-                SignIn
+                {t('Links.signIn')}
               </NavLink>
             </li>
           </ul>
@@ -52,7 +53,7 @@ export function Header() {
             {value}
             <button
               onClick={handleRemoveWalletAndBalance}
-              title="Sair da carteira"
+              title={t('Buttons.walletButtonTitle') as string}
             >
               <SignOut size={22} />
             </button>
@@ -60,7 +61,7 @@ export function Header() {
         ) : (
           <Button onClick={handleSetWallets}>
             <Wallet size={22} />
-            Connect your wallet
+            {t('Buttons.walletButton')}
           </Button>
         )}
       </SubContainer>
