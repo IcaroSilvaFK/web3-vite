@@ -1,3 +1,3 @@
 import { atom } from 'jotai'
 
-export const switchLangIsOpen = atom(true)
+export const switchLangIsOpen = atom(false)
