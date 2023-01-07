@@ -21,7 +21,8 @@
       "walletButton":"Conecte sua carteira",
       "walletButtonTitle":"Sair da carteira",
       "contact":"Contato",
-      "send":"Enviar"
+      "send":"Enviar",
+      "switchLangModal":"Alternar para idioma"
     },
     "Footer":{
       "copy":"Todos os direitos reservados."

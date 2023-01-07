@@ -22,7 +22,8 @@
       "walletButton":"Connect your wallet",
       "walletButtonTitle":"Exit wallet",
       "contact":"Contact",
-      "send":"Send"
+      "send":"Send",
+      "switchLangModal":"Switch to language"
     },
     "Footer":{
       "copy":"All rights reserved."
