@@ -33,25 +33,25 @@ export function Home() {
     <Container>
       <ContainerFirstSection>
         <div>
-          <h1>{t('Home.welcomeMessage')}</h1>
+          <h1>{t('Pages.Home.welcomeMessage')}</h1>
           <MetamaskLogo meshJson={metamask} />
         </div>
 
         <img src="/assets/E-Wallet-bro.svg" alt="" />
       </ContainerFirstSection>
       <ContainerSecondSection>
-        <h3>{t('Home.joinRewards')}</h3>
+        <h3>{t('Pages.Home.joinRewards')}</h3>
         <div>
           <Info size={25} weight="bold" />
-          <p>{t('Home.paragraphCryptocurrencies')}</p>
+          <p>{t('Pages.Home.paragraphCryptocurrencies')}</p>
         </div>
-        <strong>🛡 {t('Home.contractsPools')}</strong>
-        <p>{t('Home.paragraphWithdraw')}</p>
+        <strong>🛡 {t('Pages.Home.contractsPools')}</strong>
+        <p>{t('Pages.Home.paragraphWithdraw')}</p>
       </ContainerSecondSection>
       <SecondSection>
-        <h3>{t('Home.openYourMind')}</h3>
-        <p>{t('Home.firstMindParagraph')}</p>
-        <span>{t('Home.secondMindParagraph')}</span>
+        <h3>{t('Pages.Home.openYourMind')}</h3>
+        <p>{t('Pages.Home.firstMindParagraph')}</p>
+        <span>{t('Pages.Home.secondMindParagraph')}</span>
       </SecondSection>
       <LastSection>
         <div>
@@ -63,7 +63,7 @@ export function Home() {
             ))}
           </ul>
           <span>
-            <span>+12.592</span> {t('Home.peopleAlreadyUsing')}
+            <span>+12.592</span> {t('Pages.Home.peopleAlreadyUsing')}
           </span>
         </div>
       </LastSection>

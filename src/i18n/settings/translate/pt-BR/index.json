@@ -1,28 +1,42 @@
 
 {
   "translation":{
-    "Home" : {
-      "welcomeMessage": "CONECTE SUA CARTEIRA E COMECE!",
-      "joinRewards":"JUNTE-SE AO NOSSO SISTEMA DE RECOMPENSAS E APOSTAS",
-      "paragraphCryptocurrencies":"Deposite criptomoedas e tokens nativos (ERC-20) em nossos pools e gere receitas passivas de criptomoedas. Atualmente a Danki Finance é uma plataforma Web3 brasileira única com contratos eleitos e segurança. E expandindo internacionalmente!",
-      "paragraphWithdraw":"Você pode sacar ou depositar a qualquer hora que quiser em qualquer pool que escolher participar. Algumas piscinas cobram uma taxa de entrada, outras não. Consulte os detalhes do Pool antes de depositar.",
-      "contractsPools":"Todos os nossos contratos (piscinas, jogos e mais) são auditados e seguros. Invista com segurança.",
-      "openYourMind":"ABRA SUA MENTE PARA O FUTURO",
-      "firstMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
-      "secondMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
-      "peopleAlreadyUsing":"as pessoas já estão usando"
+    "Pages": {
+      "Home" : {
+        "welcomeMessage": "CONECTE SUA CARTEIRA E COMECE!",
+        "joinRewards":"JUNTE-SE AO NOSSO SISTEMA DE RECOMPENSAS E APOSTAS",
+        "paragraphCryptocurrencies":"Deposite criptomoedas e tokens nativos (ERC-20) em nossos pools e gere receitas passivas de criptomoedas. Atualmente a Danki Finance é uma plataforma Web3 brasileira única com contratos eleitos e segurança. E expandindo internacionalmente!",
+        "paragraphWithdraw":"Você pode sacar ou depositar a qualquer hora que quiser em qualquer pool que escolher participar. Algumas piscinas cobram uma taxa de entrada, outras não. Consulte os detalhes do Pool antes de depositar.",
+        "contractsPools":"Todos os nossos contratos (piscinas, jogos e mais) são auditados e seguros. Invista com segurança.",
+        "openYourMind":"ABRA SUA MENTE PARA O FUTURO",
+        "firstMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
+        "secondMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
+        "peopleAlreadyUsing":"as pessoas já estão usando"
+      },
+      "Login":{
+        "subTitle":"Entre com sua conta",
+        "divider":"ou"
+      },
+      "CreateAccount": {
+        "title":"BEM-VINDO A CRIAR CONTA"
+      }
     },
+    
     "Links": {
       "home":"Início",
       "trader":"Trade",
-      "signIn":"Entrar"
+      "signIn":"Entrar",
+      "createAccount":"ou crie uma conta"
     } ,
     "Buttons": {
       "walletButton":"Conecte sua carteira",
       "walletButtonTitle":"Sair da carteira",
       "contact":"Contato",
       "send":"Enviar",
-      "switchLangModal":"Alternar idioma"
+      "switchLangModal":"Alternar idioma",
+      "loginPageSignIn":"entrar",
+      "back":"Voltar",
+      "createAccount":"Criar Conta"
     },
     "Footer":{
       "copy":"Todos os direitos reservados."
@@ -31,7 +45,12 @@
       "Placeholders": {
         "placeholderAddress":"Digite o endereço da carteira",
         "amountTransferredPlaceholder":"Digite o valor a ser transferido",
-        "findOutMorePlaceholder":"Digite seu e-mail para saber mais"
+        "findOutMorePlaceholder":"Digite seu e-mail para saber mais",
+        "loginPageEmailPlaceholder":"Digite seu e-mail",
+        "loginPagePasswordPlaceholder":"Coloque sua senha",
+        "createAccountPageEmailPlaceholder":"digite seu e-mail",
+        "createAccountPagePasswordPlaceholder":"digite sua senha",
+        "createAccountPageUsernamePlaceholder":"digite se nome de usuário"
       },
       "Labels": {
         "transactionTransaction":"Adicione uma descrição para sua transação",
@@ -46,7 +65,7 @@
     },
     "Toasts": {
       "Infos": {
-        "providerWeb3Info":"só usamos a metamask como carteira digital",
+        "providerWeb3Info":"só utilizamos a metamask como carteira digital",
         "walletIsNotProvide":"Voce precisa de uma carteira na metamask para conseguir transferir"
       },
       "Errors": {

@@ -2,28 +2,42 @@
 
 {
   "translation":{
-    "Home" : {
-      "welcomeMessage": "CONNECT YOUR WALLET AND GET STARTED!",
-      "joinRewards":"JOIN OUR POOL REWARDS & STAKING SYSTEM",
-      "paragraphCryptocurrencies":"Deposit Native Cryptocurrencies and Tokens (ERC-20) into our Pools and Generate Passive Cryptocurrency Revenue. Currently Danki Finance is a unique Brazilian Web3 platform with s elected contracts and security. And expanding internationally!",
-      "paragraphWithdraw":"You can withdraw or deposit any time you want to any pool you choose to participate. Some pools have a fee to enter, others don't. Consult Pool details before Depositing.",
-      "contractsPools":"All our contracts (pools, games and more) are audited and secure. Invest safely.",
-      "openYourMind":"OPEN YOUR MIND TO THE FUTURE",
-      "firstMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
-      "secondMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
-      "peopleAlreadyUsing":"people are already using"
+    "Pages": {
+      "Home" : {
+        "welcomeMessage": "CONNECT YOUR WALLET AND GET STARTED!",
+        "joinRewards":"JOIN OUR POOL REWARDS & STAKING SYSTEM",
+        "paragraphCryptocurrencies":"Deposit Native Cryptocurrencies and Tokens (ERC-20) into our Pools and Generate Passive Cryptocurrency Revenue. Currently Danki Finance is a unique Brazilian Web3 platform with s elected contracts and security. And expanding internationally!",
+        "paragraphWithdraw":"You can withdraw or deposit any time you want to any pool you choose to participate. Some pools have a fee to enter, others don't. Consult Pool details before Depositing.",
+        "contractsPools":"All our contracts (pools, games and more) are audited and secure. Invest safely.",
+        "openYourMind":"OPEN YOUR MIND TO THE FUTURE",
+        "firstMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
+        "secondMindParagraph":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium expedita, nihil eius praesentium laborum similique delectus animi consequatur tempora beatae a. Ad voluptate laboriosam suscipit ab aut explicabo adipisci sit!",
+        "peopleAlreadyUsing":"people are already using"
+      },
+      "Login":{
+        "subTitle":"Sign in with your Account",
+        "divider":"or"
+      },
+      "CreateAccount": {
+        "title":"WELCOME TO CREATE ACCOUNT"
+      }
     },
+    
     "Links": {
       "home":"Home",
       "trader":"Trader",
-      "signIn":"SigIn"
+      "signIn":"SigIn",
+      "createAccount":"or create an account"
     } ,
     "Buttons": {
       "walletButton":"Connect your wallet",
       "walletButtonTitle":"Exit wallet",
       "contact":"Contact",
       "send":"Send",
-      "switchLangModal":"Switch to language"
+      "switchLangModal":"Switch to language",
+      "loginPageSignIn":"sign in",
+      "back":"Back",
+      "createAccount":"Create Account"
     },
     "Footer":{
       "copy":"All rights reserved."
@@ -32,7 +46,12 @@
       "Placeholders": {
         "placeholderAddress":"Enter wallet address",
         "amountTransferredPlaceholder":"Enter the amount to be transferred",
-        "findOutMorePlaceholder":"Enter your email to find out more"
+        "findOutMorePlaceholder":"Enter your email to find out more",
+        "loginPageEmailPlaceholder":"Enter your email",
+        "loginPagePasswordPlaceholder":"Enter your password",
+        "createAccountPageEmailPlaceholder":"type your email",
+        "createAccountPagePasswordPlaceholder":"type your password",
+        "createAccountPageUsernamePlaceholder":"type your username"
       },
       "Labels": {
         "transactionTransaction":"Add a description for your transaction",

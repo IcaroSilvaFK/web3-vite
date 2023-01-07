@@ -40,7 +40,7 @@ export function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/singin">
+              <NavLink to="/signIn">
                 <SignIn size={20} />
                 {t('Links.signIn')}
               </NavLink>

@@ -4,6 +4,7 @@ import { Layout } from '../layout'
 import { Home } from '../pages/Home'
 import { SignIn } from '../pages/SignIn'
 import { Trade } from '../pages/Trade'
+import { CreateAccount } from '../pages/CreateAccount'
 
 export const router = createBrowserRouter([
   {
@@ -24,5 +25,9 @@ export const router = createBrowserRouter([
   {
     path: '/signIn',
     element: <SignIn />,
+  },
+  {
+    path: '/create',
+    element: <CreateAccount />,
   },
 ])
