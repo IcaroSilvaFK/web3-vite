@@ -5,8 +5,8 @@ import ptBR from './translate/pt-BR/index.json'
 import en from './translate/en-US/index.json'
 
 i18n.use(initReactI18next).init({
-  resources: { en, ptBR },
-  fallbackLng: 'en',
+  resources: { 'en-US': en, 'pt-BR': ptBR },
+  fallbackLng: navigator.languages[0],
   interpolation: {
     escapeValue: false,
   },
