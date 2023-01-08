@@ -6,22 +6,25 @@ export const GlobalCSS = createGlobalStyle`
     margin: 0;
     box-sizing: border-box
   }
+  
   :focus{
     outline: 0;
     box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.green[500]};
   }
+  
   html,body,#root{
     width: 100%;
     height: 100%;
-    background:${({ theme }) => theme.colors.gray[900]};
-    color:${({ theme }) => theme.colors.gray[300]};
+    color:${({ theme }) => theme.colors.gray[900]};
     -webkit-font-smoothing: antialiased;
   }
+  
   body,input,textarea, button{
     font-family: ${({ theme }) => theme.fonts.roboto};
     font-weight: 400;
     font-size: 1rem;
   }
+  
   button,input{
     border: 0;
     outline: 0;
@@ -29,15 +32,17 @@ export const GlobalCSS = createGlobalStyle`
       cursor: not-allowed;
     }
   }
+
   button{
     cursor: pointer;
   }
+
   ul,ol{
     list-style: none;
   }
+
   a{
     text-decoration: none;
     color:inherit
   }
-
 `

@@ -24,8 +24,7 @@
     "react-router-dom": "^6.6.1",
     "react-toastify": "^9.1.1",
     "web3": "^1.8.1",
-    "zod": "^3.20.2",
-    "theme":"*"
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
