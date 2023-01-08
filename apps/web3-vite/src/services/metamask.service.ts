@@ -11,20 +11,22 @@ interface ICreateNewTransactionRequestProps {
 }
 
 class WalletBalance {
-  private web3: Web3
+  private web3: Web3 | undefined
 
-  constructor() {
-    this.web3 = new Web3(window.ethereum)
-  }
+  // constructor() {
+  //   this.web3 = new Web3(window.ethereum)
+  // }
 
   async getMetamaskWallet(): Promise<string[]> {
     if (!window.ethereum) {
       throw new NoMetaMaskFound('ethereum is not available')
     }
 
-    const web3 = new Web3(window.ethereum)
+    // const web3 = new Web3(window.ethereum)
 
-    const wallet = await web3.eth.requestAccounts()
+    this.web3 = new Web3(window.ethereum)
+
+    const wallet = await this.web3!.eth.requestAccounts()
 
     if (!wallet) {
       throw new WalletRefused('wallet is not available')
@@ -35,9 +37,9 @@ class WalletBalance {
 
   async getWalletsBalance(address: string): Promise<string> {
     try {
-      const balance = await this.web3.eth.getBalance(address)
+      const balance = await this.web3!.eth.getBalance(address)
 
-      const convertBalance = this.web3.utils.fromWei(balance)
+      const convertBalance = this.web3!.utils.fromWei(balance)
       return convertBalance
     } catch (err) {
       console.log(err)
@@ -47,7 +49,7 @@ class WalletBalance {
 
   convertBalance(balance: string): string {
     try {
-      const convertBalance = this.web3.utils.fromWei(balance)
+      const convertBalance = this.web3!.utils.fromWei(balance)
       return convertBalance
     } catch (err) {
       console.log(err)
@@ -58,17 +60,19 @@ class WalletBalance {
   async createTransaction(props: ICreateNewTransactionRequestProps) {
     try {
       const { amount, from, to } = props
-      const nonce = await this.web3.eth.getTransactionCount(from, 'latest')
+      const nonce = await this.web3!.eth.getTransactionCount(from, 'latest')
 
       const objectTransaction = {
         from,
         to,
-        value: this.web3.utils.toWei(String(amount)),
+        value: this.web3!.utils.toWei(String(amount)),
         gas: 21000,
         nonce,
       }
 
-      const transaction = await this.web3.eth.sendTransaction(objectTransaction)
+      const transaction = await this.web3!.eth.sendTransaction(
+        objectTransaction,
+      )
 
       return transaction
     } catch (err) {
@@ -78,7 +82,7 @@ class WalletBalance {
 
   async destroyWallet() {
     try {
-      this.web3.eth.clearSubscriptions((error) => {
+      this.web3!.eth.clearSubscriptions((error) => {
         throw new Error(error as any)
       })
     } catch (err) {
