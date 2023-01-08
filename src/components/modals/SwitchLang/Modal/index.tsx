@@ -7,7 +7,7 @@ import { Container } from './styles'
 import { useEffect } from 'react'
 
 export function Modal() {
-  const [_, setIsOpenModal] = useAtom(switchLangIsOpen)
+  const [isOpen, setIsOpenModal] = useAtom(switchLangIsOpen)
 
   useEffect(
     () => {
@@ -17,20 +17,25 @@ export function Modal() {
         }
       })
 
+      if (isOpen) {
+        document.body.setAttribute('aria-hidden', 'true')
+      }
+
       return () => {
         window.removeEventListener('keydown', (e) => {
           if (e.key === 'Escape') {
             setIsOpenModal(false)
           }
         })
+        document.body.removeAttribute('aria-hidden')
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
+    [isOpen],
   )
 
   return (
-    <Container onClick={() => setIsOpenModal(false)}>
+    <Container onClick={() => setIsOpenModal(false)} aria-hidden="false">
       <ModalContent />
     </Container>
   )

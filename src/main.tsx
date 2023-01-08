@@ -17,8 +17,6 @@ import { I18NButton } from './components/I18NButton'
 const domain: string = import.meta.env.VITE_AUTH_DOMAIN
 const clientId: string = import.meta.env.VITE_AUTH_CLIENT_ID
 
-console.log({ domain, clientId })
-
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <Auth0Provider

@@ -8,7 +8,7 @@ import { switchLangIsOpen } from '../../atoms/switchLangState'
 import { Container } from './styles'
 
 export function I18NButton() {
-  const [_, setModalIsOpen] = useAtom(switchLangIsOpen)
+  const [, setModalIsOpen] = useAtom(switchLangIsOpen)
   const { t } = useTranslation()
 
   return createPortal(

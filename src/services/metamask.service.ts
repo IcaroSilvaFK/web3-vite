@@ -1,6 +1,6 @@
 import Web3 from 'web3'
-import { NoBalanceFound } from '../errors/NoBalanceFound'
 
+import { NoBalanceFound } from '../errors/NoBalanceFound'
 import { NoMetaMaskFound } from '../errors/NoMetaMaskFound'
 import { WalletRefused } from '../errors/WalletRefused'
 
