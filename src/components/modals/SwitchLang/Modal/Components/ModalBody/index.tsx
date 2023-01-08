@@ -12,8 +12,8 @@ export function ModalBody() {
   return (
     <Container>
       <button
-        className={i18n.language !== 'en' ? 'active' : ''}
-        onClick={() => handleChangeLanguage('ptBR')}
+        className={i18n.language !== 'en-US' ? 'active' : ''}
+        onClick={() => handleChangeLanguage('pt-BR')}
       >
         <img
           src="https://cdn.icon-icons.com/icons2/1694/PNG/96/brbrazilflag_111698.png"
@@ -21,8 +21,8 @@ export function ModalBody() {
         />
       </button>
       <button
-        className={i18n.language === 'en' ? 'active' : ''}
-        onClick={() => handleChangeLanguage('en')}
+        className={i18n.language === 'en-US' ? 'active' : ''}
+        onClick={() => handleChangeLanguage('en-US')}
       >
         <img
           src="https://cdn.icon-icons.com/icons2/1694/PNG/96/usunitedstatesflag_111929.png"
